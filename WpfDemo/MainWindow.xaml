@@ -4,18 +4,23 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfDemo"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        mc:Ignorable="d" FontSize="18" FontFamily="Segoe UI Light"
+        Title="Our WPF Demo" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20" /> <!-- fixed borders -->
-            <ColumnDefinition Width="auto" /> <!-- width of column will be adjusted based on content -->
+            <ColumnDefinition Width="20" />
+            <!-- fixed borders -->
+            <ColumnDefinition Width="auto" />
+            <!-- width of column will be adjusted based on content -->
             <ColumnDefinition Width="auto" />
             <ColumnDefinition Width="auto" />
-            <ColumnDefinition Width="*" /> <!-- this column will use the rest of the space -->
+            <ColumnDefinition Width="161*" />
+            <ColumnDefinition Width="508*"/>
+            <!-- this column will use the rest of the space -->
             <ColumnDefinition Width="20" />
         </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions> <!-- the same as for columns -->
+        <Grid.RowDefinitions>
+            <!-- the same as for columns -->
             <RowDefinition Height="20" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
@@ -25,5 +30,11 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="20" />
         </Grid.RowDefinitions>
+
+        <TextBlock Grid.Column="1" Grid.Row="1" FontSize="36" Text="WPF Super Demo" Grid.ColumnSpan="3" 
+                   Margin="0,0,0,10"/> <!-- ColumnSpan defines that this element should be placed in 3 columns-->
+
+        <TextBlock Grid.Column="1" Grid.Row="2" FontWeight="SemiBold" Text="First name" FontFamily="Segoe UI" />
+        <TextBox Name="firstNameText" Grid.Column="2" Grid.Row="2" Width="150" />
     </Grid>
 </Window>
